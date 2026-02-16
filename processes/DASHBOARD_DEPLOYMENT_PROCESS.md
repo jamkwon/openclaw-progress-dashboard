@@ -7,8 +7,8 @@
 ## 🎯 Key Learnings
 
 ### What Worked Well:
-- **GitHub Pages backup deployment** - Reliable, fast, good fallback
-- **Vercel primary deployment** - Feature-rich but sometimes slower  
+- **GitHub Pages primary deployment** - Reliable, fast, preferred platform
+- **Vercel secondary deployment** - Feature-rich backup but sometimes slower  
 - **Multi-platform redundancy** - Having both reduces single points of failure
 - **Real data integration** - Users want actual system data, not fake placeholder content
 - **Clearmud-style sophistication** - Match the complexity level users expect from power tools
@@ -17,7 +17,7 @@
 - **Always deploy to 2+ platforms** for redundancy
 - **Use real OpenClaw API data** instead of static content
 - **Test both links** before sharing with user
-- **GitHub as backup is fast and reliable**
+- **GitHub as primary is fast and reliable, Vercel as secondary backup**
 
 ## 🚀 Proven Deployment Workflow
 
@@ -30,7 +30,7 @@
 
 ### 2. Multi-Platform Deployment
 
-#### A. GitHub Pages (Backup/Reliable)
+#### A. GitHub Pages (Primary/Reliable)
 ```bash
 mkdir dashboard-project
 cd dashboard-project
@@ -45,7 +45,7 @@ curl -X POST -H "Authorization: token $(gh auth token)" \
   -d '{"source": {"branch": "main", "path": "/"}}'
 ```
 
-#### B. Vercel (Primary/Feature-Rich)
+#### B. Vercel (Secondary/Backup)
 ```bash
 cd dashboard-project
 vercel --prod --yes
